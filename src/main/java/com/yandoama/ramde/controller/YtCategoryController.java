@@ -24,7 +24,11 @@ public class YtCategoryController {
             @RequestBody @Valid YtCategoryDto category) {
         log.info("Saving a category of id {} : {}", category.getId(), category.getNom().toUpperCase());
         Long nouveauId = new Random().nextLong();
+        String nouveauNom = new Random().toString();
+        String nom = "RAMDE";
         category.setId(nouveauId);
+        category.setNom(nom);
+
         return new ResponseEntity<>(category, HttpStatus.CREATED);
     }
 
